@@ -1,0 +1,6 @@
+Python provides several methods for writing to files.
+The built-in open() function is commonly used to interact with files.
+This function takes two parameters: the name of the file and the mode in which to open it.
+The 'w' mode is used for writing to a file.
+If the file does not exist, it will be created.
+If it does exist, the 'w' mode will overwrite the existing content.

@@ -1,0 +1,13 @@
+Learning Python's file writing functionality
+There are 3 different modes with file
+1. r means to read the file contents
+2. w means to write something in file contents
+3. a means to append an existing file with contents with new contents
+Python provides several methods for writing to files.
+The built-in open() function is commonly used to interact with files.
+This function takes two parameters: the name of the file and the mode in which to open it.
+The 'w' mode is used for writing to a file.
+If the file does not exist, it will be created.
+If it does exist, the 'w' mode will overwrite the existing content.
+Furthermore, there are also combinations of modes.
+Examples include r+, w+, a+, x+

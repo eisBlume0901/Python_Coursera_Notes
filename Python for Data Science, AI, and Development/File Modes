@@ -1,0 +1,23 @@
+"r" - read mode, opens an existing file for reading, raises an error if the file does not exist
+"w" - write mode, creates a new file for writing, overwrites the file if its already exists
+"a" - append mode, opens a file for appending data, creates the file if it doesn't exist
+"x" - exclusive creation mode, creates a new file for writing but raises an error if the file already exists
+
+"rb" - read binary mode, opens an existing binary file for reading
+"wb" - write binary mode, creates a new binary file for writing
+"ab" - append binary mode, opens a binary file for appending data
+"xb" - exclusive binary mode, creates a new binary file for writing but raises an error if it already exists
+
+"rt" - read text mode, opens an existing text file for reading (default for text files)
+"wt" - write text mode, creates a new text file for writing (default for text files)
+"at" - append text mode, opens a text file for appending data (default for text files)
+"xt" - exclusive text creation mode, creates a new text file for writing but raises an error if its already exists
+
+"r+" - read and write mode, opens an existing file for both reading and writing
+"w+" - write and read mode, creates a new file for reading and writing, overwrites the file if it already exists
+"a+" - append and read mode, opens a file for both appending and reading, creates the file if it does not exist
+"x+" - exclusive creation and read/write mode, creates a new file for reading and writing but raises an error if it already exists
+
+
+Most commonly used:
+r, w, a, x, r+, w+, a+, x+

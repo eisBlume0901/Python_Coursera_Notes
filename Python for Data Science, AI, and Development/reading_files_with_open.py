@@ -9,7 +9,7 @@ aboutPythonFile.close()
 
 # Alternative 1 for opening and closing the file without using with statement (it reads the contents of the txt file without creating a new line every after a line)
 # Advantages: automatic resource management (will close even an exception occurs), cleaner and more concise code (readable and less-error prone)
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     file_contents = aboutPythonFile.read() # Prints the contents of the file
     print(file_contents)
 
@@ -17,7 +17,7 @@ print("Is it closed? ", aboutPythonFile.closed) # Returns a boolean value if the
 print(file_contents) # Still can access the contents of the file despite the file being closed already
 
 # Reading one line per new line "\n"
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     first_sentence = aboutPythonFile.readline() # Note the sample text must indent new line each entry
     print(first_sentence)
 
@@ -26,7 +26,7 @@ with open("about_python.txt", "r") as aboutPythonFile:
     print(file_contents) # <_io.TextIOWrapper name='about_python.txt' mode='r' encoding='cp1252'>
 
 # Reading a string returned by the readline
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     first_word = aboutPythonFile.readline(6)
     print(first_word) # Returns "Python"
     second_word = aboutPythonFile.readline(3)
@@ -37,7 +37,7 @@ with open("about_python.txt") as aboutPythonFile:
     print(fourth_word)
 
 # Reading every line inside the text file using while loop
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     while True:
         line = aboutPythonFile.readline()
         if not line:
@@ -45,14 +45,14 @@ with open("about_python.txt") as aboutPythonFile:
         print(line) # Returns each line with
 
 # Reading ever line inside the text file using for loop
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     i = 0
     for line in aboutPythonFile:
         print("Iteration", str(i), ": ", line)
         i = i + 1
 
 # Using other file methods
-with open("about_python.txt") as aboutPythonFile:
+with open("about_python.txt", "r") as aboutPythonFile:
     aboutPythonFile.seek(6) # Moves the 0th index as 11,
     file_contents = aboutPythonFile.readline()
     print(file_contents)
