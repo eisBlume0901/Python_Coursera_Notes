@@ -1,0 +1,16 @@
+id,name,position,salary,hired_date
+1,John Doe,Software Engineer,70000,2022-01-01
+2,Jane Smith,Data Scientist,80000,2021-06-15
+3,Jim Brown,Product Manager,90000,2020-03-20
+4,Jill Johnson,UX Designer,75000,2022-02-28
+5,Joe Davis,QA Engineer,65000,2021-11-01
+6,Adam White,Backend Developer,72000,2021-12-01
+7,Amy Green,Frontend Developer,68000,2022-01-15
+8,Andrew Black,Data Analyst,77000,2021-07-23
+9,Anna Blue,Project Manager,82000,2020-05-12
+10,Aaron Gray,DevOps Engineer,88000,2021-03-08
+11,Alice Red,Software Tester,66000,2022-02-20
+12,Albert Brown,Database Administrator,79000,2021-08-30
+13,Amanda Pink,Mobile Developer,73000,2021-11-19
+14,Arthur Silver,Security Analyst,85000,2020-04-28
+15,Angela Gold,Web Developer,70000,2022-01-05

@@ -56,3 +56,4 @@ with open("about_python.txt", "r") as aboutPythonFile:
     aboutPythonFile.seek(6) # Moves the 0th index as 11,
     file_contents = aboutPythonFile.readline()
     print(file_contents)
+
