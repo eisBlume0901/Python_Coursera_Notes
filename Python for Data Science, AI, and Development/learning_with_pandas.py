@@ -41,3 +41,9 @@ print(employees.groupby("position")['annual_salary'].mean())
 print(employees.columns)
 employees = employees.rename(columns={"name": "employee_name"})
 print(employees.columns)
+
+# Accessing dataframes
+print(employees.iloc[1, 1]) # Expected to be data scientist
+print(employees.loc[1:2, "employee_name":"salary"]) # loc can be used with combination of integers and column based headers
+employees_v1 = employees.set_index("employee_name")
+print(employees_v1.loc["Anna Blue", "position"]) # Expected to be project manager
