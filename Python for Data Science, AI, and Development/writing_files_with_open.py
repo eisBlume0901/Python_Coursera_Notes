@@ -1,4 +1,5 @@
 
+# read() = content, readline() = next line, readlines() = lines
 
 with open("learning_with_file_writing.txt", "w") as file:
     file.write("Learning Python's file writing functionality\n")
