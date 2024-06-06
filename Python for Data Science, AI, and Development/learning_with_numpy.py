@@ -97,3 +97,32 @@ print(arr1[0:5:2])
 print(arr2[1:5:2])
 # Getting odd numbers from array 2
 print(arr2[0:5:2])
+
+# axis=0 is vertical, axis=1 is horizontal
+# numpy for 2 dimensions
+array = np.array([[11, 12, 13], [21, 22, 23], [31, 32, 33]])
+print(array[0:2, 2]) # 2 row elements from 2nd column
+print(array[1][2]) # 23
+print(array[0][0:2]) # 11, 12
+
+X = np.array([[1, 0], [0, 1]])
+Y = np.array([[2, 1], [1, 2]])
+print(X + Y)
+print(np.add(X, Y))
+
+print(X * Y)
+print(np.multiply(X,Y)) # only multiplies same size in row and column
+
+print(2 * X)
+print(np.multiply(2, X))
+
+print(np.dot(X, Y))
+
+a = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+A = np.array(a)
+B = np.array([[0, 1], [1, 0], [1, 1], [-1, 0]])
+print(np.dot(A, B))
+
+print(A)
+print(np.transpose(A))
+print(A.reshape(2, 6)) # Original shape is 4 x 3, reshaped is 2 x 6 (always reshape when it is exactly the number of values inside the ndarray)
