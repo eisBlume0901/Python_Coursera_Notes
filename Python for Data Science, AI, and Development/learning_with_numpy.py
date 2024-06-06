@@ -17,6 +17,7 @@ print(even)
 u = np.array([[1], [9]]) # x = 1, y = 8
 v = np.array([[19], [1]]) # x = 19, y = 1
 print(u + v)
+print(np.add(u, v))
 
 # Vector Addition without using numpy
 u = [1, 0]
@@ -30,10 +31,12 @@ print(z)
 u = np.array([[10, 1], [9, 4]])
 v = np.array([[5, 3], [0, 4]])
 print(u - v)
+print(np.subtract(u, v))
 
 # Scalar Multiplication with numpy
 y = np.array([[1], [2]])
 print(2*y) # each component is multiplied to 2, it is expected to have 2 and 4
+print(np.multiply(2, y))
 
 # Scalar Multiplication without using numpy
 y = [1, 2]
@@ -46,6 +49,7 @@ print(z)
 # Scalar Addition with numpy (broadcasting)
 u = np.array([2, 4, 5, 7, 9])
 print(u + 1)
+print(np.add(u, 1))
 
 # Hadamard Product with numpy
 u = np.array([[1, 4], [2, 7]])
@@ -79,3 +83,17 @@ x = np.linspace(0, 2*np.pi, 100)
 y = np.sin(x)
 plt.plot(x, y)
 plt.show()
+
+
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([6, 7, 8, 9, 10])
+
+# Getting even numbers from array 1
+print(arr1[1:5:2])
+# Getting odd numbers from array 2
+print(arr1[0:5:2])
+
+# Getting even numbers from array 2
+print(arr2[1:5:2])
+# Getting odd numbers from array 2
+print(arr2[0:5:2])
