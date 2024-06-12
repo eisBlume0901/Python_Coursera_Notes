@@ -1,0 +1,41 @@
+HTTP Request Message - sent by client
+HTTP Response Message - sent from web server, received by client
+
+Uniform Resource Locator (URL) Parrts
+1. Scheme: the protocol (http:// or https://)
+2. Internet address of base url: use to find the location (www.ibm.com or www.gitlab.com)
+3. Route: location on the web server (/history/logo)
+
+https://www.ibm.com/history/logo
+
+Status Code
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01
+1xx Informational (100 "Continue" - initial part of the request has been received
+and has not yet been rejected by the server)
+2xx Success (200 "Success" - indicates that the request was successful)
+3xx Redirection (300 "Redirection" - server has more than one possible resource to fulfill the request, and the user
+agent or user needs to choose one of them)
+4xx Client Error (401 "Unauthorized", 403 "Forbidden", 404 "Not Found")
+5xx Server Error (500 "Server Error", 501 "No Implemented"
+
+HTTP Method
+GET - retrieves data from the server
+POST - submits data to server
+PUT - updates data already on server
+DELETE - deletes data from server
+
+Get Request with URL parameters
+Scheme: http://
+Base URL: httpbin.org
+Route: /get
+Query String (part of URL, for single query: ?parameterName=value, for multiple queries: ?parameterName=value&?parameterName=value):
+?name=Joseph&ID=123
+http://httpbin.org/get/?name=Joseph&ID=123
+
+Post Request with URL Parameters
+Scheme: http://
+Base URL: httpbin.org
+Route: /post
+Query String (part of URL, for single query: ?parameterName=value, for multiple queries: ?parameterName=value&?parameterName=value):
+?name=Joseph&ID=123
+http://httpbin.org/post/?name=Joseph&ID=123
