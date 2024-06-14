@@ -2,7 +2,6 @@ import requests
 
 import os
 from PIL import Image
-from IPython.display import IFrame
 
 url = "https://www.ibm.com/"
 r = requests.get(url)
@@ -31,7 +30,7 @@ r = requests.post(url_post, data=payload)
 print(r.url) # https://jsonplaceholder.typicode.com/posts
 print(r.request.body) # title=Testing+POST+requests&body=Learning+HTTP+Requests+and+Response&userId=1
 print(r.json()) # Note that this payload dictionary wont return anything because there is no match found in requested server
-
+# Furthermore, the website does not allow user to change any content there
 
 # Retrieving image
 url= 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/IDSNlogo.png'
