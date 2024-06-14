@@ -26,3 +26,6 @@ table = soup.find("table")
 
 for row in table.find_all("tr"):
     cols = row.find_all("td")
+    color_name = cols[2].string
+    color_code = cols[3].text
+    print(f"{color_name}, {color_code}")
