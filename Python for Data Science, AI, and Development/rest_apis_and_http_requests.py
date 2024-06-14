@@ -48,6 +48,14 @@ with open(path, "wb") as file:
 # View the image
 Image.open(path)
 
+# Retrieving another image
+url = "https://content.dodea.edu/VS/HS/webdesign/masterz/s/module4/images/table-tag-example.gif"
+r = requests.get(url)
+path = os.path.join(os.getcwd(), "table-tag.example.gif")
+with open(path, "wb") as file:
+    file.write(r.content)
+Image.open(path)
+
 # Retrieving text file
 url = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/Example1.txt'
 r = requests.get(url)
@@ -56,3 +64,4 @@ print(r.headers["Content-Type"])
 path = os.path.join(os.getcwd(), "Example1.txt")
 with open(path, "wb") as file:
     file.write(r.content)
+
