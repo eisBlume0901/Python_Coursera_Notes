@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/Script_Create_Tables.sql" dialect="GenericSQL" />
     <file url="file://D:/CEU Computer Science/PETRESCUE-CREATE.sql" dialect="MySQL" />
+    <file url="file://D:/CEU Computer Science/Script_Create_Tables.sql" dialect="MySQL" />
   </component>
 </project>

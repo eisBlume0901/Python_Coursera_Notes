@@ -22,3 +22,5 @@ print(number_of_rescues_in_may)
 sql = "SELECT ID, DATE_ADD(RESCUEDATE, INTERVAL 1 YEAR) FROM PETRESCUE"
 expected_date_of_finding_homes_for_rescued_animals = db.execute_query(sql)
 print(expected_date_of_finding_homes_for_rescued_animals)
+
+db.close()
