@@ -26,6 +26,10 @@ sql = "SELECT * FROM JOBS WHERE JOB_IDENT IN (SELECT JOB_ID FROM EMPLOYEES WHERE
 job_info_of_employees_1977_and_up = db.execute_query(sql)
 print(pd.DataFrame(job_info_of_employees_1977_and_up))
 
+sql = "SELECT * FROM EMPLOYEES WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS)"
+highest_department_id = db.execute_query(sql)
+print(pd.DataFrame(highest_department_id))
+
 
 # Implicit Join / Full Join / Cartesian Join
 sql = "SELECT E.EMP_ID, E.F_NAME, E.L_NAME, J.JOB_TITLE FROM EMPLOYEES E, JOBS J WHERE E.JOB_ID = J.JOB_IDENT"
@@ -39,3 +43,7 @@ print(pd.DataFrame(junior_designers_v2))
 sql = "SELECT J.* FROM EMPLOYEES E, JOBS J WHERE E.JOB_ID = J.JOB_IDENT AND YEAR(E.B_DATE) > 1976"
 job_info_of_employees_1977_and_up_v2 = db.execute_query(sql)
 print(pd.DataFrame(job_info_of_employees_1977_and_up_v2))
+
+sql = "SELECT F_NAME, DEP_NAME FROM EMPLOYEES, DEPARTMENTS WHERE DEPT_ID_DEP = DEP_ID"
+employees_with_its_department_names = db.execute_query(sql)
+print(pd.DataFrame(employees_with_its_department_names))
