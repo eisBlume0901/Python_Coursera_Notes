@@ -47,3 +47,5 @@ sql = "SELECT EMPL_ID, YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, START_DATE))), (SEL
 years_of_service_of_each_employee = db.execute_query(sql)
 print(years_of_service_of_each_employee)
 print(pd.DataFrame(years_of_service_of_each_employee))
+
+db.close()
