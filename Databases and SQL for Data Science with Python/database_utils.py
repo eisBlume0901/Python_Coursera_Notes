@@ -3,6 +3,7 @@
 
 import mysql.connector as mysql
 
+
 class Database:
 
 
@@ -16,8 +17,8 @@ class Database:
         self.cursor = None
 
     def connect(self, database_name):
-
         try:
+
             self.conn = mysql.connect(host=self.host,
                                       port=self.port,
                                       user=self.user,
