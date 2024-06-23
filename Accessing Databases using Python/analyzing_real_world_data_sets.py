@@ -26,7 +26,7 @@ pd.set_option('display.max_rows', None)  # None means unlimited
 
 # Converting data to SQL
 data.to_sql("chicago_socioeconomic_data", conn, if_exists='replace', index=False)
-chicago_socioeconomic_df = pd.read_sql("SELECT * FROM chicago_socioeconomic_data", conn)
+chicago_socioeconomic_df = pd.read_sql("SELECT * FROM chicago_socioeconomic_data", conn) # can also use read_sql_query
 print(chicago_socioeconomic_df.head())
 print(chicago_socioeconomic_df.describe(include="all")) # will provide summary statistics in numeric and non-numeric column
 
