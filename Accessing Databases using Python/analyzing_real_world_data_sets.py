@@ -10,6 +10,7 @@ conn = sqlite3.connect("chicago_socioeconomic.db")
 cur = conn.cursor()
 
 # Fetch and save the csv file
+# compared to the working_with_a_real_world_data_sets.py, the csv link requires SSL or authentication
 url = "https://data.cityofchicago.org/resource/jcxq-k9xf.csv"
 response = requests.get(url)
 path = os.path.join(os.getcwd(), "chicago_socioeconomic.csv")
