@@ -8,8 +8,7 @@ pd.set_option('display.max_columns', None)  # None means unlimited
 pd.set_option('display.expand_frame_repr', False)  # Don't wrap to multiple pages
 pd.set_option('display.max_rows', None)  # None means unlimited
 
-# Accessing two different tables (wit
-# Subquery
+# Accessing two different tables (with subquery)
 sql = "SELECT * FROM EMPLOYEES WHERE JOB_ID IN (SELECT JOB_IDENT FROM JOBS)"
 employees_matching_in_jobs_table = db.execute_query(sql)
 print(pd.DataFrame(employees_matching_in_jobs_table))
