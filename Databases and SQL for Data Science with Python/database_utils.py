@@ -3,7 +3,6 @@
 
 import mysql.connector as mysql
 
-
 class Database:
 
 
