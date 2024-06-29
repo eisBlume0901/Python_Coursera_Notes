@@ -106,3 +106,89 @@ execute_query(script)
 script = "SELECT @counter"
 print(execute_query(script)) # 8
 
+# DROP Keyword - to remove a stored procedure
+script = """DROP PROCEDURE IF EXISTS SetCounter"""
+execute_query(script)
+
+script = """SHOW WARNINGS"""
+print(execute_query(script)) #[('Note', 1304, 'PROCEDURE SetCounter already exists')], if it's not removed. If it is removed then, no message
+
+# Declare is used to initialize a variable
+# Select totalOrder is like print(totalOrder)
+# This code returns the total number of orders from orders table
+script = """CREATE PROCEDURE IF NOT EXISTS GetTotalOrder()
+            BEGIN
+                DECLARE totalOrder INT DEFAULT 0;
+                
+                SELECT COUNT(*) INTO totalOrder 
+                    FROM orders;
+                    
+                SELECT totalOrder;
+                
+            END"""
+
+execute_query(script)
+
+script = """CALL GetTotalOrder()"""
+print(execute_query(script)) # expected to be 326 total of orders
+
+
+script = """CREATE PROCEDURE IF NOT EXISTS GetCustomerLevel(
+                IN pCustomerNumber INT)
+            BEGIN
+                DECLARE credit DECIMAL DEFAULT 0;
+                DECLARE pCustomerLevel VARCHAR(8);
+                
+                SELECT creditLimit
+                INTO credit
+                FROM customers
+                WHERE customerNumber = pCustomerNumber;
+                
+                IF credit > 5000 THEN
+                    SET pCustomerLevel = 'PLATINUM';
+                ELSEIF credit <= 5000 AND credit >= 10000 THEN
+                    SET pCustomerLevel = 'GOLD';
+                ELSE
+                    SET pCustomerLevel = 'SILVER';
+                END IF;
+                
+                SELECT pCustomerLevel;
+
+            END"""
+
+execute_query(script)
+
+script = "CALL GetCustomerLevel(447)"
+print(execute_query(script))
+
+
+# If-else-elseif / If-else / If-then vs Case statement
+# Case statements - flexible and versatile as it allows multiple conditions and return different results based on those conditions
+# If statements - useful when you are evaluating something to a TRUE/FALSE condition
+
+script = """CREATE PROCEDURE GetDeliveryStatus(IN pOrderNumber INT)
+            BEGIN
+                Declare waitingDay INT DEFAULT 0;
+                Declare pDeliveryStatus VARCHAR(30);
+                
+                SELECT DATEDIFF(shippedDate, requiredDate) INTO waitingDay
+                FROM orders
+                WHERE orderNumber = pOrderNumber;
+                
+                CASE
+                    WHEN waitingDay < 0 THEN
+                        SET pDeliveryStatus = 'Early Delivery';
+                    WHEN waitingDay >= 1 AND waitingDay < 5 THEN
+                        SET pDeliveryStatus = 'On Time';
+                    WHEN waitingDay >= 5 THEN
+                        SET pDeliveryStatus = 'Very Late';
+                    ELSE
+                        SET pDeliveryStatus = 'No Information';
+                END CASE;
+                
+                SELECT pDeliveryStatus;
+            END"""
+execute_query(script)
+
+script = """CALL GetDeliveryStatus(10100)"""
+print(execute_query(script)) # Early Delivery

@@ -1,0 +1,10 @@
+IN - pass input values to a stored procedure. These parameters are read-only within the procedure
+(counterpart is argument)
+Example: Passing an employee ID to retrieve specific employee details
+
+OUT - return a value from the stored procedure. The procedure can modify the value of an OUT parameter
+(counterpart is return value)
+Example: Calculating the total number of employees and returning it as an OUT parameter
+
+INOUT - pass value to the procedure and also retrieve a modified value
+Example: Passing an initial balance and updating it based on transactions

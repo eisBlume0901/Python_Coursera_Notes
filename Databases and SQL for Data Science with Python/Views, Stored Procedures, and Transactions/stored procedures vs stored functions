@@ -1,0 +1,17 @@
+Functions
+- computer values and cannot perform permanent environmental changes (no INSERT or UPDATE statements allowed)
+- returns a value either a scalar or a table
+- can have input parameters and can be used in inline SQL statements
+- does not support transactions
+- does not support exception handling
+- can be joined upon if they return a result set (table)
+
+Procedures
+- handle larger activities and can modify data
+- optionally return zero or multiple values
+- can have input/output parameters
+- can use transactions
+- can call each other but cannot be used directly in SELECT, WHERE, OR HAVING statements
+
+Functions - focused on computations
+Procedures - handles complex tasks and allow data modification
