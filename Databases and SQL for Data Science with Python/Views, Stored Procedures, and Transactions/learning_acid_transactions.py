@@ -1,0 +1,76 @@
+
+import mysql.connector as mysql
+
+# Establish database connection
+connection = mysql.connect(host="localhost",
+                           port=3306,
+                           username="root",
+                           password="",
+                           database="learning_acid_transactions")
+
+def execute_query(script):
+    if connection.is_connected() == False:
+        connection.reconnect(attempts=3, delay=5)
+    Cursor = connection.cursor()
+    Cursor.execute(script)
+    result = Cursor.fetchall()
+    Cursor.close()
+    return result
+
+# Update: It worked since sql matches the variable name and SQL column name is not the same
+
+script = """CREATE PROCEDURE IF NOT EXISTS BUY_SHOES(
+            IN accountNum VARCHAR(4),
+            IN productName VARCHAR(30),
+            IN numOrders INT)
+            BEGIN
+                DECLARE acctBalance DECIMAL(8,2);
+                DECLARE productPrice DECIMAL(8, 2);
+                DECLARE productStock INT;
+                DECLARE productValue DECIMAL(8, 2);
+
+                START TRANSACTION;
+
+                SELECT Balance INTO acctBalance FROM bankaccounts WHERE AccountNumber = accountNum;
+                SELECT Price, Stock INTO productPrice, productStock FROM shoeshop WHERE LOWER(Product) LIKE LOWER(productName);
+
+                SET productValue = productPrice * numOrders;
+                
+                IF acctBalance >= (productPrice * numOrders) AND productStock >= numOrders THEN
+                    UPDATE bankaccounts
+                    SET Balance = Balance + productValue
+                    WHERE AccountNumber = 'B003';
+
+                    UPDATE bankaccounts
+                    SET Balance = Balance - productValue
+                    WHERE AccountNumber = accountNum ;
+
+                    UPDATE shoeshop
+                    SET Stock = Stock - numOrders
+                    WHERE LOWER(Product) LIKE LOWER(productName);
+
+                    COMMIT;
+                ELSE
+                    ROLLBACK;
+                END IF;
+            END;
+        """
+execute_query(script)
+
+# script = """CALL BUY_SHOES('B002', 'Boots', 2)"""
+# execute_query(script)
+#
+# script = """SELECT * FROM bankaccounts WHERE AccountName = 'Shoe Shop';"""
+# print(execute_query(script))
+
+# script = """CALL BUY_SHOES('B002', 'Trainers', 4)"""
+# execute_query(script)
+#
+# script = """SELECT * FROM bankaccounts WHERE AccountName = 'Shoe Shop';"""
+# print(execute_query(script))
+#
+# script = """CALL BUY_SHOES('B002', 'Brogues', 1)"""
+# execute_query(script)
+#
+# script = """SELECT * FROM bankaccounts WHERE AccountName = 'Shoe Shop';"""
+# print(execute_query(script))
