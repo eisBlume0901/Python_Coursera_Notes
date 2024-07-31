@@ -9,5 +9,8 @@
     <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/Views, Stored Procedures, and Transactions/learning_stored_procedures.py" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/Views, Stored Procedures, and Transactions/learning_views.py" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/Views, Stored Procedures, and Transactions/mysqlsampledatabase.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/chicago_crime.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/chicago_public_schools.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/Databases and SQL for Data Science with Python/chicago_socioeconomic_data.sql" dialect="MariaDB" />
   </component>
 </project>

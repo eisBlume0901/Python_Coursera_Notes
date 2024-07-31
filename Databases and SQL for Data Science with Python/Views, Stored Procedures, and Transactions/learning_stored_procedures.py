@@ -166,7 +166,7 @@ print(execute_query(script))
 # Case statements - flexible and versatile as it allows multiple conditions and return different results based on those conditions
 # If statements - useful when you are evaluating something to a TRUE/FALSE condition
 
-script = """CREATE PROCEDURE GetDeliveryStatus(IN pOrderNumber INT)
+script = """CREATE PROCEDURE IF NOT EXISTS GetDeliveryStatus(IN pOrderNumber INT)
             BEGIN
                 Declare waitingDay INT DEFAULT 0;
                 Declare pDeliveryStatus VARCHAR(30);
